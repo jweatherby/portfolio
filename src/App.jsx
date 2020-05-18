@@ -5,24 +5,19 @@ import { AboutMe, ProjectsAndWork } from './static-pages'
 import { BlogPost, PostList, PostPreview } from './blog-posts'
 
 import { GlobalStyle } from './Globals.styled'
+
+import { useWindowSize } from './windowSizeHook'
 // import './App.css'
 // import './common.css'
 
 export const App = () => {
-  const [windowSize, setWindowSize] = useState({})
+  let windowSize
+  if (typeof window !== 'undefined') {
+    windowSize = useWindowSize()
+  }
   const [mobNavToggled, toggleMobNav] = useState(true)
 
-  // useEffect(() => {
-  //   if(window){
-  //     window.addEventListener('resize', () => setWindowSize({
-  //       height: window.innerHeight,
-  //       width: window.innerWidth,
-  //     }))
-  //   }
-  //   return () => window.removeEventListener('resize', setWindowSize)
-  // }, [window])
-
-  const isMobile = typeof window !== 'undefined' && windowSize.width < 900
+  const isMobile = windowSize && windowSize.width < 900
 
   return (
     <React.Fragment>
