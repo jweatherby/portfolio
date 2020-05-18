@@ -25,6 +25,11 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 0 20px 0;
     padding: 0px;
   }
+
+  #root {
+    opacity: 1;
+  }
+
   .base-layout {
     display: flex;
     font-family: 'Raleway', sans-serif;

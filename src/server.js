@@ -39,6 +39,12 @@ server
             ? `<script src="${assets.client.js}" defer></script>`
             : `<script src="${assets.client.js}" defer crossorigin></script>`
         }
+        <style>
+          #root {
+            opacity: 0;
+            transition: opacity .2s linear;
+          }
+        </style>
     </head>
     <body>
         <div id="root">${markup}</div>
