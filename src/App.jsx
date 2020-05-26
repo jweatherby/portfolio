@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Switch, Router, Route, Link, useHistory } from 'react-router-dom'
+import { Switch, Router, Route, Link, useLocation } from 'react-router-dom'
 
 import { AboutMe, ProjectsAndWork } from './static-pages'
 import { BlogPost, PostList, PostPreview } from './blog-posts'
@@ -14,14 +14,11 @@ mixpanel.init('ad5f4db0302f905e48c35b2d1054b778')
 
 export const App = () => {
   let windowSize
-  const history = useHistory()
+  const location = useLocation()
 
   useEffect(() => {
-    mixpanel.track('Page view', history.location.pathname)
-    history.listen((location, action) => {
-      mixpanel.track('Page view', location.pathname)
-    })
-  }, [])
+    mixpanel.track('Page view', location.pathname)
+  }, [location])
 
   if (typeof window !== 'undefined') {
     windowSize = useWindowSize()
