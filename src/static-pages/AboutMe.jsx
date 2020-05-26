@@ -15,11 +15,9 @@ export const AboutMe = () => {
           <a href="https://points.com" target="_blank">
             Points
           </a>
-          , a great company with a strong focus culture, engineering and work
+          , a great company with a strong focus on culture, engineering and work
           life balance. Outside of work, I play a lot of sports and boardgames.
-          Some of these things include Euchre, pool, volleyball, squash and
-          Ultimate Frisbee. If you'd like to reach out and chat or play these
-          things, you can reach me on{' '}
+          If you'd like to reach out, you can reach me on{' '}
           <a href="https://twitter.com/_jweatherby" target="_blank">
             Twitter
           </a>{' '}

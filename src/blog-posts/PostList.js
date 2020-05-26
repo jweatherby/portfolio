@@ -9,7 +9,8 @@ export const PostList = () => {
     <>
       <h2>Writings</h2>
       <div className="post-list">
-        {allPosts.map((post, key) => (
+        <div>Stay tuned!</div>
+        {/* {allPosts.map((post, key) => (
           <div className="post-item" key={key}>
             <div>
               <div>
@@ -27,7 +28,7 @@ export const PostList = () => {
               </Link>
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
     </>
   )
