@@ -31,21 +31,23 @@ export const App = () => {
     <React.Fragment>
       <GlobalStyle />
       <div className="base-layout">
-        <nav className="nav">
-          <div>
-            <img src="/images/profile-pic.png" className="profile-pic" />
-          </div>
-          <div>
-            <Link to="/">About Me</Link>
-          </div>
-          <div>
-            <Link to="/projects-and-work">Work & Projects</Link>
-          </div>
-          <div>
-            <Link to="/blog">Blog</Link>
-          </div>
-          {/*<div><a href='/images/CV-Jamie_Weatherby.pdf'>CV</a></div>*/}
-        </nav>
+        {!isMobile && (
+          <nav className="nav">
+            <div>
+              <img src="/images/profile-pic.png" className="profile-pic" />
+            </div>
+            <div>
+              <Link to="/">About Me</Link>
+            </div>
+            <div>
+              <Link to="/projects-and-work">Work & Projects</Link>
+            </div>
+            <div>
+              <Link to="/blog">Blog</Link>
+            </div>
+            {/*<div><a href='/images/CV-Jamie_Weatherby.pdf'>CV</a></div>*/}
+          </nav>
+        )}
         <section className="main-content">
           <Switch>
             <Route path="/" component={AboutMe} exact />

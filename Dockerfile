@@ -20,4 +20,5 @@ COPY --from=builder /app/ .
 
 EXPOSE 3000
 ENV NODE_ENV=production
+ENV RAZZLE_MIXPANEL_TOKEN=$MIXPANEL_TOKEN
 CMD ["node", "build/server.js"]
