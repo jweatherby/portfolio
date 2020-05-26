@@ -10,16 +10,15 @@ import { useWindowSize } from './windowSizeHook'
 
 import mixpanel from 'mixpanel-browser'
 
+mixpanel.init('ad5f4db0302f905e48c35b2d1054b778')
+
 export const App = () => {
   let windowSize
   const location = useLocation()
 
   useEffect(() => {
-    mixpanel.init('ad5f4db0302f905e48c35b2d1054b778')
-  }, [])
-
-  useEffect(() => {
-    mixpanel.track('Page view', location.pathname)
+    console.log('tracking:', location.pathname)
+    mixpanel.track('Page view', { page: location.pathname })
   }, [location])
 
   if (typeof window !== 'undefined') {
