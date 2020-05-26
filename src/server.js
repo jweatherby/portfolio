@@ -3,6 +3,9 @@ import React from 'react'
 import { StaticRouter } from 'react-router-dom'
 import express from 'express'
 import { renderToString } from 'react-dom/server'
+import Mixpanel from 'mixpanel'
+
+const mixpanel = Mixpanel.init(process.env.RAZZLE_MIXPANEL_TOKEN)
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST)
 
@@ -11,6 +14,8 @@ server
   .disable('x-powered-by')
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
   .get('/*', (req, res) => {
+    mixpanel.track('Server page view', { page: req.url })
+
     const context = {}
     const markup = renderToString(
       <StaticRouter context={context} location={req.url}>

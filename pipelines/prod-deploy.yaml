@@ -5,7 +5,7 @@ steps:
       '-t',
       'gcr.io/$PROJECT_ID/portfolio:latest',
       '--build-arg',
-      'API_ROOT_URL=https://psync-api-fhbaf4aqaq-uc.a.run.app',
+      'MIXPANEL_TOKEN=$_MIXPANEL_TOKEN',
       '.'
     ]
 
