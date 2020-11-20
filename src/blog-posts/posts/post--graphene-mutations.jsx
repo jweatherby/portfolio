@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {PostTemplate} from '../PostTemplate'
 const grapheneMutation = `
 import graphene
 
@@ -18,11 +18,7 @@ const grapheneSchema = `
 `.trim()
 
 export const GrapheneMutations = () => (
-  <div className="blog-post">
-    <header>
-      <h2>Django Mutations in Graphene</h2>
-    </header>
-    <article>
+  <PostTemplate title='Django Mutations in Graphene'>
       <h3>Scene: </h3>
       <p>
         Imagine you're building an app that tracks neighborhood pets. You're
@@ -37,6 +33,5 @@ export const GrapheneMutations = () => (
       <pre>
         <code className="python">{grapheneMutation}</code>
       </pre>
-    </article>
-  </div>
+  </PostTemplate>
 )

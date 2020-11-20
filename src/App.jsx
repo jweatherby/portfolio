@@ -8,17 +8,9 @@ import { GlobalStyle } from './Globals.styled'
 
 import { useWindowSize } from './windowSizeHook'
 
-import mixpanel from 'mixpanel-browser'
-
-mixpanel.init(process.env.RAZZLE_MIXPANEL_TOKEN)
-
 export const App = () => {
   let windowSize
   const location = useLocation()
-
-  useEffect(() => {
-    mixpanel.track('Client page view', { page: location.pathname })
-  }, [location])
 
   if (typeof window !== 'undefined') {
     windowSize = useWindowSize()
