@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from 'react'
 import hljs from 'highlight.js'
 import { allPosts } from './posts'
 
-import 'highlight.js/styles/github.css'
+import 'highlight.js/styles/monokai.css'
 import './blog-posts.css'
 
 hljs.registerLanguage('python', require('highlight.js/lib/languages/python'))

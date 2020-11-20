@@ -6,9 +6,11 @@ export const AboutMe = () => {
       <article>
         <p>Hi, I'm Jamie.</p>
         <p>
-          I've been a Software Engineer for 8 years, primarily focusing on
-          Python <br />
-          and JavaScript with a passion for readable, correct, fast code.
+          I've been a Software Engineer for 10 years, focusing primarily on
+          Python and JavaScript. I am a principled engineer, am very
+          enthusiastic about functional programming, and am always introspecting
+          on how systems can be improved. I strive to make my code readable,
+          correct and fast, in that order.
         </p>
         <p>
           I'm currently working for{' '}

@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    font-size: 16px;
 }
 
 .post-item  img {
