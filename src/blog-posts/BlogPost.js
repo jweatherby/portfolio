@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from 'react'
 
 import hljs from 'highlight.js'
 import { allPosts } from './posts'
+import { StyledBlogPost } from './BlogPost.styled'
 
 import 'highlight.js/styles/monokai.css'
-import './blog-posts.css'
 
 hljs.registerLanguage('python', require('highlight.js/lib/languages/python'))
 hljs.registerLanguage('js', require('highlight.js/lib/languages/javascript'))
@@ -27,14 +27,20 @@ export const BlogPost = (
     }
   }, [])
 
-  const blogPosts = allPosts.filter(p => p.slug === slug)
-  if (!blogPosts.length) {
+  const Post = allPosts.find(p => p.slug === slug)
+  if (!Post) {
     return <div>Not found</div>
   }
-  const FoundPost = blogPosts[0]
   return (
-    <div ref={blogRef}>
-      <FoundPost.body />
-    </div>
+    <StyledBlogPost ref={blogRef}>
+      <header>
+        <h2>{Post.title}</h2>
+      </header>
+      <Post.body />
+      <footer>
+        <div>{Post.tags.join(', ')}</div>
+        <div>{Post.dateCreated}</div>
+      </footer>
+    </StyledBlogPost>
   )
 }

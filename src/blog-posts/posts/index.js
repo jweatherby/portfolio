@@ -1,23 +1,23 @@
-import { GrapheneMutations } from './post--graphene-mutations'
-
-
 export const allPosts = [
   {
-    title: 'Django Mutations in Graphene',
-    slug: 'django-mutuations-in-graphene',
-    blurb: 'Handling graphene mutations in Django',
-    imageSrc: '/images/blog-posts/graphene-screenshot.png',
-    dateCreated: 'Nov 18, 2019',
-    tags: ['tutorial', 'python', 'django', 'graphene'],
-    body: GrapheneMutations,
+    title: 'Why React?',
+    slug: 'the-react-library',
+    blurb: `
+      We've settled on building a static site in React.
+      How did we get here?
+    `,
+    imageSrc: '/images/blog-posts/react-logo.png',
+    dateCreated: 'Nov 20, 2020',
+    tags: ['react', 'static site', 'frontend'],
+    body: require('./principled-frontend/the-react-library').default,
   },
-  {
-    title: 'Django Mutations in Graphene',
-    slug: 'django-mutuations-in-graphene',
-    blurb: 'Handling graphene mutations in Django',
-    imageSrc: '/images/blog-posts/graphene-screenshot.png',
-    dateCreated: 'Nov 18, 2019',
-    tags: ['tutorial', 'python', 'django', 'graphene'],
-    body: GrapheneMutations,
-  },
+  // {
+  //   title: 'Static sites: Folder structure fundamentals',
+  //   slug: 'folder-structure',
+  //   blurb: `How to structure your code so future you is happy you.`,
+  //   imageSrc: '/images/blog-posts/sitemap.jpg',
+  //   dateCreated: 'Nov 20, 2020',
+  //   tags: ['static site', 'frontend'],
+  //   body: require('./principled-frontend/folder-structure').default,
+  // },
 ]

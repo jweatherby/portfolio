@@ -16,7 +16,7 @@ const workItems = [
     slug: 'showboard',
     name: 'Showboard',
     dates: 'Covid Project',
-    role: 'Founder',
+    role: 'All the hats',
   },
   {
     logo: '/images/work/g-logo.png',

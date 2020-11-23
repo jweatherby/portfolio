@@ -1,5 +1,4 @@
 import React from 'react'
-import {PostTemplate} from '../PostTemplate'
 const grapheneMutation = `
 import graphene
 
@@ -17,21 +16,21 @@ const grapheneSchema = `
 
 `.trim()
 
-export const GrapheneMutations = () => (
-  <PostTemplate title='Django Mutations in Graphene'>
-      <h3>Scene: </h3>
-      <p>
-        Imagine you're building an app that tracks neighborhood pets. You're
-        using Django+PostgreSQL to store your data and have decided to use
-        GraphQL as your API solution. You've installed Graphene and have hooked
-        up the models so you can query a user and their pets. Now, you're
-        building a frontend where users can list, add and remove their pets. All
-        that needs to be done now is add the mutations. This is where our story
-        starts, mapping the appropriate form fields from the input into
-        something consumable by Django's Forms.
-      </p>
-      <pre>
-        <code className="python">{grapheneMutation}</code>
-      </pre>
-  </PostTemplate>
+export default () => (
+  <article>
+    <h3>Scene: </h3>
+    <p>
+      Imagine you're building an app that tracks neighborhood pets. You're using
+      Django+PostgreSQL to store your data and have decided to use GraphQL as
+      your API solution. You've installed Graphene and have hooked up the models
+      so you can query a user and their pets. Now, you're building a frontend
+      where users can list, add and remove their pets. All that needs to be done
+      now is add the mutations. This is where our story starts, mapping the
+      appropriate form fields from the input into something consumable by
+      Django's Forms.
+    </p>
+    <pre>
+      <code className="python">{grapheneMutation}</code>
+    </pre>
+  </article>
 )
