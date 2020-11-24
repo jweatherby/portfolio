@@ -9,6 +9,7 @@ import 'highlight.js/styles/monokai.css'
 hljs.registerLanguage('python', require('highlight.js/lib/languages/python'))
 hljs.registerLanguage('js', require('highlight.js/lib/languages/javascript'))
 hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'))
+hljs.registerLanguage('json', require('highlight.js/lib/languages/json'))
 
 export const BlogPost = (
   {

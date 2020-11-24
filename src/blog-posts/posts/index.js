@@ -1,16 +1,37 @@
 export const allPosts = [
   {
-    title: 'Why React?',
-    slug: 'the-react-library',
+    title: 'The Full Stack Developer',
+    slug: 'the-fullstack-dev',
     blurb: `
-      We've settled on building a static site in React.
-      How did we get here?
+      A series focusing on all the things I've learned in my years doing frontend development.
     `,
-    imageSrc: '/images/blog-posts/react-logo.png',
-    dateCreated: 'Nov 20, 2020',
-    tags: ['react', 'static site', 'frontend'],
-    body: require('./principled-frontend/the-react-library').default,
+    imageSrc: '/images/blog-posts/frontend-principles.png',
+    dateCreated: 'Nov 23, 2020',
+    tags: ['fullstack-track'],
+    body: require('./principled-frontend/the-fullstack-dev').default,
   },
+  {
+    title: 'The Frontend Stack',
+    slug: 'the-frontend-stack',
+    blurb: `
+      My essential selection of libraries for frontend development.
+    `,
+    imageSrc: '/images/blog-posts/js-logo.jpeg',
+    dateCreated: 'Nov 23, 2020',
+    tags: ['fullstack-track', 'frontend'],
+    body: require('./principled-frontend/frontend-stack').default,
+  },
+  // {
+  //   title: 'Why React?',
+  //   slug: 'the-react-library',
+  //   blurb: `
+  //     Why do I choose react?
+  //   `,
+  //   imageSrc: '/images/blog-posts/react-logo.png',
+  //   dateCreated: 'Nov 23, 2020',
+  //   tags: ['fullstack-track'],
+  //   body: require('./principled-frontend/the-react-library').default,
+  // },
   // {
   //   title: 'Static sites: Folder structure fundamentals',
   //   slug: 'folder-structure',

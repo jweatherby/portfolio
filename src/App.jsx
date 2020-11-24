@@ -33,7 +33,7 @@ export const App = () => {
       </StyledMain>
       <StyledNav className="nav">
         <div className="profile-pic">
-          <img src="/images/funny-hat.jpg" />
+          <img src="/images/profile-pic-sq.png" />
         </div>
         <Link to="/">About Me</Link>
         <Link to="/projects-and-work">Work & Projects</Link>

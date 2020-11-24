@@ -39,7 +39,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     @media(max-width: ${breakpoints.mobile}){
       display: grid;
-      grid-template-areas: 'main' 'nav';
+      grid-template-areas: 'nav' 'main';
       grid-template-rows: 1fr auto;
     }
 

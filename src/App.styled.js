@@ -20,8 +20,8 @@ export const StyledNav = styled.nav`
     }
     .profile-pic {
       img {
-        border-radius: 15px;
-        max-height: 300px;
+        border-radius: 25px;
+        max-height: 200px;
         max-width: 100%;
       }
     }

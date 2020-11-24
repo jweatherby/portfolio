@@ -15,15 +15,22 @@ export const StyledBlogPost = styled.div`
     color: #888;
   }
   p,
-  blockquote {
+  blockquote,
+  aside {
     margin: 25px 0;
   }
-
+  aside {
+    font-size: 1rem;
+    font-style: italic;
+  }
   footer {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
     color: #777;
     font-style: italic;
+  }
+  code {
+    font-size: 0.7rem;
   }
 `
