@@ -1,32 +1,16 @@
-import http from 'http'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { App } from './App'
+import reportWebVitals from './reportWebVitals'
 
-let app = require('./server').default
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+)
 
-const server = http.createServer(app)
-
-let currentApp = app
-
-server.listen(process.env.PORT || 3000, error => {
-  if (error) {
-    console.log(error)
-  }
-
-  console.log('🚀 started')
-})
-
-if (module.hot) {
-  console.log('✅  Server-side HMR Enabled!')
-
-  module.hot.accept('./server', () => {
-    console.log('🔁  HMR Reloading `./server`...')
-
-    try {
-      app = require('./server').default
-      server.removeListener('request', currentApp)
-      server.on('request', app)
-      currentApp = app
-    } catch (error) {
-      console.error(error)
-    }
-  })
-}
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals()
