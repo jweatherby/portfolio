@@ -33,7 +33,7 @@ export const BlogPost = (
     return <div>Not found</div>
   }
   return (
-    <StyledBlogPost ref={blogRef}>
+    <StyledBlogPost ref={blogRef} key={Post.slug}>
       <header>
         <h2>{Post.title}</h2>
       </header>

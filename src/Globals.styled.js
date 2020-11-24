@@ -22,6 +22,8 @@ export const GlobalStyle = createGlobalStyle`
 
   html, body, #root {
     overflow: hidden;
+    height: -webkit-fill-available;
+    height: -moz-fill-available;
     height: 100vh;
   }
 
@@ -40,9 +42,8 @@ export const GlobalStyle = createGlobalStyle`
     @media(max-width: ${breakpoints.mobile}){
       display: grid;
       grid-template-areas: 'nav' 'main';
-      grid-template-rows: 1fr auto;
+      grid-template-rows: auto 1fr;
     }
-
   }
 
   .vert-scroll {

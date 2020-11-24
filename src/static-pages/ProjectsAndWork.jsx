@@ -1,9 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
+import { StyledProjectsAndWork } from './ProjectsAndWork.styled'
 
 const workItems = [
   {
-    logo: '/images/work/points-logo.jpg',
+    logo: '/images/work/points-logo.png',
     url: 'https://points.com',
     slug: 'points',
     name: 'Points International',
@@ -44,49 +44,26 @@ const workItems = [
   },
 ]
 
-const StyledWork = styled.div`
-  article {
-    display: grid;
-    justify-content: space-between;
-    margin: 40px 0;
-    grid-template-columns: 100px 1fr;
-    grid-column-gap: 50px;
-    align-items: center;
-    align-content: center;
-  }
-  .logo-wrapper {
-    text-align: center;
-    height: 70px;
-    img {
-      max-width: 100%;
-      max-height: 100%;
-    }
-  }
-  h4 {
-    margin-bottom: 0px;
-  }
-`
-
 export const ProjectsAndWork = () => {
   return (
-    <StyledWork>
+    <StyledProjectsAndWork>
       <h2>Projects & Work</h2>
       {workItems.map((work, key) => (
         <article key={key} className={`work-item ${work.slug}`}>
-          <div className="logo-wrapper">
+          <div className="work-logo">
             <img src={work.logo} />
           </div>
           <div>
-            <h4>
+            <h4 className="work-company-name">
               <a href={work.url} target="_blank">
                 {work.name}
               </a>
             </h4>
-            <div>{work.dates}</div>
-            <div>{work.role}</div>
+            <strong className="work-role">{work.role}</strong>{' '}
+            <em className="work-dates">{work.dates}</em>
           </div>
         </article>
       ))}
-    </StyledWork>
+    </StyledProjectsAndWork>
   )
 }

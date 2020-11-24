@@ -208,12 +208,12 @@ const StyledBlog = styled.div\`
           href="https://testing-library.com/docs/react-testing-library/intro"
           target="_blank"
         >
-          ReactJS
+          ReactJS Testing Library
         </a>
       </li>
       <li>
         <a href="https://react-hooks-testing-library.com/" target="_blank">
-          React Hooks
+          React Hooks Testing Library
         </a>
       </li>
     </ul>
