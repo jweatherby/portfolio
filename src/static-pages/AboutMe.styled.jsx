@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import breakpoints from '../breakpoints'
 
 export const StyledAboutMe = styled.section`
+  max-width: 900px;
+  margin-bottom: 50px;
   .profile-img-wrapper {
     display: flex;
     justify-content: center;

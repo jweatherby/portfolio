@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 
 import hljs from 'highlight.js'
 import { allPosts } from './posts'
@@ -11,24 +11,26 @@ hljs.registerLanguage('js', require('highlight.js/lib/languages/javascript'))
 hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'))
 hljs.registerLanguage('json', require('highlight.js/lib/languages/json'))
 
-export const BlogPost = (
-  {
-    match: {
-      params: { slug },
-    },
+export const BlogPost = ({
+  match: {
+    params: { slug },
   },
-  ref
-) => {
+}) => {
   const blogRef = useRef(null)
+  const [Post, setPost] = useState()
+
+  useEffect(() => {
+    setPost(allPosts.find(p => p.slug === slug))
+  }, [slug])
+
   useEffect(() => {
     if (blogRef.current) {
       blogRef.current.querySelectorAll('pre code').forEach(block => {
         hljs.highlightBlock(block)
       })
     }
-  }, [])
+  }, [Post])
 
-  const Post = allPosts.find(p => p.slug === slug)
   if (!Post) {
     return <div>Not found</div>
   }

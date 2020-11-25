@@ -3,8 +3,9 @@ import React from 'react'
 export default () => (
   <article>
     <p>
-      Here, I'll show a simple list of all the essential libraries I use to get
-      a project up and running.
+      As the second part in my series, "Principled Development", I'll be going
+      through a simple list of all the essential libraries I use to get a
+      project up and running.
     </p>
     <h3>tl;dr</h3>
     <ul>
@@ -23,37 +24,53 @@ export default () => (
           Styled Components
         </a>
       </li>
+      <li>
+        <a href="https://eslint.org/" target="_blank">
+          ESLint
+        </a>
+      </li>
+      <li>
+        <a href="https://testing-library.com/" target="_blank">
+          @testing-library
+        </a>
+      </li>
     </ul>
+
+    {/* ReactJS */}
     <h3>ReactJS</h3>
     <p>
       Obviously, the framework (or library in this case) you choose will have
-      the largest impact on your codebase.{' '}
+      the largest impact on your codebase. There are a lot of great libraries
+      out there, including Elm, ClojureScript, Svelte, Angular and VueJs, but
+      I've hitched my wagon to{' '}
       <a href="https://reactjs.org/" target="_blank">
         ReactJS
-      </a>{' '}
-      was a game changer when it came out in 2013. Before, the world only knew{' '}
-      <a
-        href="https://www.pluralsight.com/guides/one-and-two-way-data-binding-angular"
-        target="_blank"
-      >
-        2 way binding
-      </a>{' '}
-      as a means of manipulating HTML to make interactions more dynamic. When
-      ReactJS came in, all of a sudden{' '}
-      <strong>THE HTML IS IN THE JAVASCRIPT</strong>.
-    </p>
-    <p>
-      Of course, that's not actually the "React", but the JSX behind the scenes.
-      ReactJS manages the state that controls the JSX. As somebody who had
-      enough of JQuery and BackBoneJS, this was magic. Of course, it has matured
-      substantially over the past couple years and with the introduction of{' '}
-      <a href="https://reactjs.org/docs/hooks-intro.html" target="_blank">
-        Hooks
       </a>
-      , it really became a joy to use.
+      .
     </p>
     <p>
-      In the past, I've used{' '}
+      Coming from JQuery land, the concept of a virtual DOM to manage the HTML
+      within the JavaScript functionality sounded amazing. The advantages
+      include a more readable codebase through JSX; quick and reliable data
+      management; individual components are more testable; can do Server Side
+      Rendering easily and it's a mature project backed by a large organization
+      (Facebook).
+    </p>
+    <p>
+      There are some disadvantages as well: it's a lot to learn; testing can be
+      technically difficult; it's lack of opinions on file structure can yield
+      unweildly codebases; and because it's so easy to create complex
+      applications, state management can become very complicated and messy.
+    </p>
+    <p>
+      So, I recommend ReactJS because I've dealt with a lot of the nuances, have
+      a deep familiarity and have established conventions when dealing with
+      ReactJS applications. Starting a big project and trying to learn React on
+      the fly is a recipe for disaster. VueJS is well suited for this sort of
+      situation.
+    </p>
+    <p>
+      To get up and running with your ReactJS application, I've had success with
       <a
         href="https://reactjs.org/docs/create-a-new-react-app.html"
         target="_blank"
@@ -74,13 +91,15 @@ export default () => (
       </a>{' '}
       or not.
     </p>
+
+    {/* React Router */}
     <h3>React Router</h3>
     <p>
       If you're building a frontend app, it probably needs different pages. And
       those different pages need to load when different routes are hit. You're
-      going to need a routing library and I've been a huge fan of{' '}
+      going to need a routing library and I'm a huge fan of{' '}
       <a href="https://reactrouter.com/" target="_blank">
-        react-router
+        React Router
       </a>
       .
     </p>
@@ -94,6 +113,8 @@ export default () => (
       complicated pages declarative and they only fetch the appropriate data at
       the right times.
     </p>
+
+    {/* Styled Components */}
     <h3>Styled Components</h3>
     <p>
       This is a contentious one.{' '}
@@ -148,16 +169,18 @@ const StyledBlog = styled.div\`
       </code>
     </pre>
     <p>
-      The last benefit to <em>styled-components</em> is implied / convention:
+      Another benefit to <em>styled-components</em> is implied / convention:
       they live next to the components they're styling. Often, I've seen SASS /
-      LESS separate from the html they relate to, meaning you have a duplicate
-      filestructure mirroring your JS code (if you were disciplined enough to do
-      that). In theory, this works fine. In practice, not so much, especially if
-      sweeping changes need to be made. You'll find that you're managing two
-      different apps that were once similar, but is no longer the case.
+      SCSS / LESS separate from the HTML they relate to, meaning you have a
+      duplicate filestructure mirroring your JS code (if you were disciplined
+      enough to do that). In theory, this works fine. In practice, not so much,
+      especially if sweeping changes need to be made. You'll find that you're
+      managing two different apps that were once similar, but are no longer.
       <br />
       I'll speak more on this later, when we discuss folder structure.
     </p>
+
+    {/* ESLint */}
     <h3>ESLint </h3>
     <p>
       Code should look consistent with conventional standards. <br />
@@ -187,9 +210,11 @@ const StyledBlog = styled.div\`
 }`}
       </code>
     </pre>
+
+    {/* JS Testing Library */}
     <h3>JS Testing Library</h3>
     <p>
-      Every good codebase needs good tests, and this, generically named,{' '}
+      Every good codebase needs good tests, and this, (super generically named),{' '}
       <a href="https://testing-library.com/" target="_blank">
         testing library
       </a>
@@ -220,9 +245,9 @@ const StyledBlog = styled.div\`
     <h3>In Conclusion</h3>
     <p>
       These are libraries I always start a new app with. You'll notice there's
-      nothing to connect to an API, no authentication and no form handling. In
-      other words, nothing to handle the business logic of the app. Just the
-      fundamentals to get started on a rock solid codebase.
+      nothing to connect to an API, no authentication, no state management, and
+      no form handling. In other words, nothing to handle the business logic of
+      the app. Just the fundamentals to get started on a rock solid codebase.
     </p>
   </article>
 )

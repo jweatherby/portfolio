@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const StyledBlogPost = styled.div`
+  max-width: 900px;
+
   blockquote {
     border-left: 4px solid #666;
     margin: 0;
@@ -23,14 +25,14 @@ export const StyledBlogPost = styled.div`
     font-size: 1rem;
     font-style: italic;
   }
+  code {
+    font-size: 0.7rem;
+  }
   footer {
     display: flex;
     justify-content: space-between;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #777;
     font-style: italic;
-  }
-  code {
-    font-size: 0.7rem;
   }
 `

@@ -1,25 +1,25 @@
 export const allPosts = [
   {
-    title: 'The Full Stack Developer',
-    slug: 'the-fullstack-dev',
+    title: 'Best Practices for Principled Development',
+    slug: 'principled-development',
     blurb: `
-      A series focusing on all the things I've learned in my years doing frontend development.
+      A series focusing on all the things I've learned in my years doing full-stack web development.
     `,
     imageSrc: '/images/blog-posts/frontend-principles.png',
     dateCreated: 'Nov 23, 2020',
-    tags: ['fullstack-track'],
-    body: require('./principled-frontend/the-fullstack-dev').default,
+    tags: ['principled-dev'],
+    body: require('./principled-dev/principled-development').default,
   },
   {
-    title: 'The Frontend Stack',
+    title: 'My Frontend Stack',
     slug: 'the-frontend-stack',
     blurb: `
       My essential selection of libraries for frontend development.
     `,
     imageSrc: '/images/blog-posts/js-logo.jpeg',
     dateCreated: 'Nov 23, 2020',
-    tags: ['fullstack-track', 'frontend'],
-    body: require('./principled-frontend/frontend-stack').default,
+    tags: ['principled-dev', 'frontend'],
+    body: require('./principled-dev/the-frontend-stack').default,
   },
   // {
   //   title: 'Why React?',
