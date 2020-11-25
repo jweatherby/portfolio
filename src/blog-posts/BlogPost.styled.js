@@ -25,8 +25,11 @@ export const StyledBlogPost = styled.div`
     font-size: 1rem;
     font-style: italic;
   }
-  code {
+  pre code {
     font-size: 0.7rem;
+  }
+  p code {
+    font-size: 0.95rem;
   }
   footer {
     display: flex;

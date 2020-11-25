@@ -26,7 +26,6 @@ export const App = () => (
       <Link to="/">About Me</Link>
       <Link to="/projects-and-work">Work & Projects</Link>
       <Link to="/blog">Blog</Link>
-      {/*<div><a href='/images/CV-Jamie_Weatherby.pdf'>CV</a></div>*/}
     </StyledNav>
   </React.Fragment>
 )
