@@ -12,8 +12,8 @@ export default () => (
     </p>
     <p>
       This series will be a reflection of the principles and best practices I've
-      learned throughout my 10+ years as a Software Engineer. These articles
-      will contain design patterns, snippets of code, and critical decisions
+      learned throughout my 10+ years as a Full Stack Web Developer. I will
+      showcase design patterns, snippets of code, and the critical decisions
       I've made to build and maintain robust codebases throughout my career.
     </p>
     <p>
@@ -22,6 +22,10 @@ export default () => (
       keep your code simple and elegant; approaches for test strategy; and best
       practices to keep future you, happy.
     </p>
+    <aside>
+      The languages I use in my day to day are Python and JavaScript, so my code
+      examples will be the shown in those languages.
+    </aside>
     <aside>
       Next: <Link to="/blog/the-frontend-stack">The Frontend Stack</Link>
     </aside>

@@ -1,14 +1,14 @@
 export const allPosts = [
   {
-    title: 'Best Practices for Principled Development',
-    slug: 'principled-development',
+    title: 'Being a Full Stack Dev',
+    slug: 'being-full-stack',
     blurb: `
       A series focusing on all the things I've learned in my years doing full-stack web development.
     `,
     imageSrc: '/images/blog-posts/frontend-principles.png',
     dateCreated: 'Nov 23, 2020',
-    tags: ['principled-dev'],
-    body: require('./principled-dev/principled-development').default,
+    tags: ['being-full-stack'],
+    body: require('./being-full-stack/being-full-stack').default,
   },
   {
     title: 'My Frontend Stack',
@@ -18,8 +18,8 @@ export const allPosts = [
     `,
     imageSrc: '/images/blog-posts/js-logo.jpeg',
     dateCreated: 'Nov 23, 2020',
-    tags: ['principled-dev', 'frontend'],
-    body: require('./principled-dev/the-frontend-stack').default,
+    tags: ['being-full-stack', 'frontend'],
+    body: require('./being-full-stack/the-frontend-stack').default,
   },
   // {
   //   title: 'Why React?',

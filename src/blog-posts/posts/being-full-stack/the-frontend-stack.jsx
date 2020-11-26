@@ -3,9 +3,9 @@ import React from 'react'
 export default () => (
   <article>
     <p>
-      As the second part in my series, "Principled Development", I'll be going
-      through a simple list of all the essential libraries I use to get the
-      frontend of a project up and running.
+      As the second part in my series, "Being Full Stack", I'll be going through
+      a simple list of all the essential libraries I use to get the frontend of
+      a project up and running.
     </p>
     <h3>tl;dr</h3>
     <ul>
