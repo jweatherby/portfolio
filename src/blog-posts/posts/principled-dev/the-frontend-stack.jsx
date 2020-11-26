@@ -4,8 +4,8 @@ export default () => (
   <article>
     <p>
       As the second part in my series, "Principled Development", I'll be going
-      through a simple list of all the essential libraries I use to get a
-      project up and running.
+      through a simple list of all the essential libraries I use to get the
+      frontend of a project up and running.
     </p>
     <h3>tl;dr</h3>
     <ul>
@@ -39,10 +39,10 @@ export default () => (
     {/* ReactJS */}
     <h3>ReactJS</h3>
     <p>
-      Obviously, the framework (or library in this case) you choose will have
-      the largest impact on your codebase. There are a lot of great libraries
-      out there, including Elm, ClojureScript, Svelte, Angular and VueJs, but
-      I've hitched my wagon to{' '}
+      The framework (or library in this case) you choose will have the largest
+      impact on your codebase. There are a lot of great libraries out there,
+      including Elm, ClojureScript, Svelte, Angular and VueJs. I've hitched my
+      wagon to{' '}
       <a href="https://reactjs.org/" target="_blank">
         ReactJS
       </a>
@@ -51,26 +51,31 @@ export default () => (
     <p>
       Coming from JQuery land, the concept of a virtual DOM to manage the HTML
       within the JavaScript functionality sounded amazing. The advantages
-      include a more readable codebase through JSX; quick and reliable data
-      management; individual components are more testable; can do Server Side
-      Rendering easily and it's a mature project backed by a large organization
-      (Facebook).
+      include a more readable codebase through JSX and{' '}
+      <a href="https://stackoverflow.com/a/34520204/1531156" target="_blank">
+        one-way-binding
+      </a>
+      ; quick and declarative rendering; more testable individual components;
+      easy Server Side Rendering; and React is a mature project with a huge
+      community.
     </p>
     <p>
       There are some disadvantages as well: it's a lot to learn; testing can be
       technically difficult; it's lack of opinions on file structure can yield
-      unweildly codebases; and because it's so easy to create complex
-      applications, state management can become very complicated and messy.
+      unweildly codebases; the ecosystem is almost too large; and because it is
+      so easy to create complex applications, state management can become very
+      complicated and messy.
     </p>
     <p>
-      So, I recommend ReactJS because I've dealt with a lot of the nuances, have
-      a deep familiarity and have established conventions when dealing with
-      ReactJS applications. Starting a big project and trying to learn React on
-      the fly is a recipe for disaster. VueJS is well suited for this sort of
-      situation.
+      I prefer ReactJS because I've dealt with a lot of the nuances, have a deep
+      familiarity with the language and ecosystem, and have established
+      conventions when dealing with ReactJS applications. A word of warning,
+      starting a big project and trying to learn React at the same time is a
+      recipe for disaster. There are other languages and frameworks which are
+      more forgiving of these types of scenarios.
     </p>
     <p>
-      To get up and running with your ReactJS application, I've had success with
+      To get up and running with your ReactJS application, I've had success with{' '}
       <a
         href="https://reactjs.org/docs/create-a-new-react-app.html"
         target="_blank"
@@ -91,17 +96,18 @@ export default () => (
       </a>{' '}
       or not.
     </p>
+    <aside>*This blog was built with RazzleJS</aside>
 
     {/* React Router */}
     <h3>React Router</h3>
     <p>
       If you're building a frontend app, it probably needs different pages. And
       those different pages need to load when different routes are hit. You're
-      going to need a routing library and I'm a huge fan of{' '}
+      going to need a routing library and I've been happy with{' '}
       <a href="https://reactrouter.com/" target="_blank">
         React Router
-      </a>
-      .
+      </a>{' '}
+      in the past.
     </p>
     <p>
       How you route your app and which library you choose will impact how your
@@ -110,8 +116,8 @@ export default () => (
       inline throughout the code as needed. This might be counter-intuitive at
       first, but you'll find that managing the data is easier as a result,
       especially when dealing with localized components. This structure can make
-      complicated pages declarative and they only fetch the appropriate data at
-      the right times.
+      complicated pages declarative since they only fetch the data they need at
+      exactly the right time.
     </p>
 
     {/* Styled Components */}
@@ -121,10 +127,10 @@ export default () => (
       <a href="https://styled-components.com/" target="_blank">
         Styled components
       </a>{' '}
-      are CSS-in-JS, a thought horrifying to a lot of accomplished developers.
+      are CSS-in-JS, a horrifying thought to a lot of accomplished developers.
       I, however, think it's great. How does it work? You import
-      styled-components, assign the styles and then wrap your components like a
-      hyper-stylized blanket.
+      styled-components, assign the styles and replace the native React
+      components with your sytlized ones.
     </p>
     <pre>
       <code className="js">
@@ -147,7 +153,15 @@ export const Blog = () => (
     </pre>
     <p>
       It's that easy! And the best part is that it supports nested styles, much
-      like SASS or LESS.
+      like SASS, SCSS and LESS. The difference is that there's no pre or post
+      css-processor needed, which makes for a simpler{' '}
+      <a
+        href="https://changelog.com/news/automate-the-pain-away-with-divops-M5WR"
+        target="_blank"
+      >
+        DivOps
+      </a>{' '}
+      process.
     </p>
     <pre>
       <code className="js">
@@ -159,7 +173,7 @@ const StyledBlog = styled.div\`
     padding: 5px;
     border: 1px solid #000;
 
-    img {                <-- nested styles are not possible in plain css
+    img {      <-- nested styles are not possible in plain css
         width: 200px;
         height: 200px;
     }
@@ -221,12 +235,10 @@ const StyledBlog = styled.div\`
       , is the best library for testing React. React can be tested with other
       libraries, but with the introduction of hooks, testing became difficult.
       This library ensures best testing practices and allows you to create unit
-      tests for your individual topics. <br />
+      tests for your individual units of work. <br />
       We'll chat more about testing at a later time.
     </p>
-    <p>
-      This testing library comes with all the add-ons you need to test your app:{' '}
-    </p>
+    <p>This testing library has all the add-ons to test your app: </p>
     <ul>
       <li>
         <a

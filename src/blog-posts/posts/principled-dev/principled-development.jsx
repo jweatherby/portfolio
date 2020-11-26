@@ -13,9 +13,8 @@ export default () => (
     <p>
       This series will be a reflection of the principles and best practices I've
       learned throughout my 10+ years as a Software Engineer. These articles
-      will contain design patterns, snippets of code, and the motivation behind
-      decisions that I've used to build and maintain robust codebases throughout
-      my career.
+      will contain design patterns, snippets of code, and critical decisions
+      I've made to build and maintain robust codebases throughout my career.
     </p>
     <p>
       I'm going to show you how to connect the frontend and backend in a
