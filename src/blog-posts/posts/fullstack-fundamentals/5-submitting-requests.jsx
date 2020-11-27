@@ -2,7 +2,7 @@ import React from 'react'
 
 export default () => (
   <React.Fragment key="submitting-requests">
-    <h3>Subitting Requests to the API</h3>
+    <h3>Submitting Requests to the API</h3>
     <p>
       The inverse of loading data from the API is sending it back. This is where
       a form library would come in handy, but is not necessary. I've found that
@@ -12,7 +12,7 @@ export default () => (
     <pre>
       <code className="react">
         {`
-import { handleRequest } from 'api'
+import { apiRequest } from 'api'
 import { useState } from 'react'
 
 // extract inline errors
@@ -30,29 +30,42 @@ const extractFormErrors = errors =>
     .filter(err => !!err)
 
 export const useApi = () => {
+
   const [requestState, setRequestState] = useState({})
+  const reset = () => setRequestState({})
 
   const runQuery = async ({apiPath, method, formBody, onSuccess = {} }) => {
+
+    // prevent duplicate submissions
     if (requestState.submitting) {
       console.warn('Already submitting')
       return
     }
     setRequestState({ submitting: true })
-    const { errors, ...respData } = await handleRequest(method, apiPath, { body })
+
+    // Handle the API request
+    const { errors, ...respData } = await apiRequest(method, apiPath, { body })
+
+    // if any errors, handle them here and return that response
     if (errors) {
       const fieldErrors = extractFormFieldErrors(errors)
-      return setRequestState({ success: false, errors: extractFormErrors(errors), fieldErrors })
+      const formErrors = extractFormErrors(errors)
+      return setRequestState({ success: false, errors: formErrors, fieldErrors })
     }
-    const { message = 'Success!', timeout = 3000, cta } = onSuccess
+
+    // if successful, provide a re-usable message and the success flag
+    const { message = 'Success!', timeout = 3000, callback } = onSuccess
     setRequestState({ success: true, message, data: respData })
-    if (cta) {
-      cta(respData)
+
+    setTimeout(reset, timeout)
+
+    // if the user specified something on success, invoke that with the Api Response
+    if (callback) {
+      callback(respData)
     }
-    setTimeout(() => {
-      setRequestState({})
-    }, timeout)
   }
-  const reset = () => setRequestState({})
+
+  // return the methods and state to re-use this hook
   return { runQuery, reset, ...requestState }
 }
 `.trim()}
@@ -68,13 +81,13 @@ export const useApi = () => {
       <code className="react">
         {`
 const Form = () => {
-  const { runQuery, ...submitState } = useState({ setFieldErrors })
+  const { runQuery, ...submitState } = useState()
   const onSubmit = async (formVals) => runQuery({
     apiPath: '/users',
     method: 'PATCH',  # or POST, PUT, whatever
     body: formVals,
-    onSubmit: {
-      cta: (response) => {console.log('Submission response', response)}
+    onSuccess: {
+      callback: (response) => {console.log('Submission response', response)}
     }
   })
 
@@ -107,7 +120,8 @@ const Form = () => {
     </pre>
     <p>
       As you can see, it is very straightforward and localizes all the request
-      states in one state, making it very manageable and predictable.
+      states into one state variable, making it very manageable and
+      predicatable.
     </p>
   </React.Fragment>
 )

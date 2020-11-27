@@ -15,7 +15,7 @@ import React, { useState, useEffect } from 'react'
 import { handleRequest } from 'api'
 
 const ApiLoader = ({apiPath, render}) => {
-  const [requestSTate, setRequestState] = useState({loading: true})
+  const [requestState, setRequestState] = useState({loading: true})
 
   // onload, automatically trigger the request
   useEffect(() => {
@@ -87,14 +87,24 @@ const getUserBlogPosts = async () => {
     </p>
     <pre>
       <code className="js">{`
-const UserInfo = () => <ApiLoader apiPath='/user' render={UserBlog} />
+const UserInfo = () => (
+  <Page>
+    <ApiLoader apiPath='/user' render={UserBlog} />
+  </Page>
+)
 const UserBlog = ({ user }) => (
-  <ApiLoader apiPath='/blog/\${user.blogId}' render={BlogPosts} />
+  <UserPage user={user}>
+    <UserDetails />
+    <ApiLoader apiPath='/blog/\${user.blogId}' render={BlogPosts} />
+  </UserPage>
 )
 const BlogPost = ({ blog }) => (
-  <ApiLoader
-    apiPath='/blog/\${blog.id}/posts/\${blog.postIds[0]}'
-    render={PostContent} />
+  <Blog>
+    <Breadcrumbs />
+    <ApiLoader
+      apiPath='/blog/\${blog.id}/posts/\${blog.postIds[0]}'
+      render={PostContent} />
+  </Blog>
 )
 `}</code>
     </pre>

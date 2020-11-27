@@ -25,16 +25,16 @@ export default () => (
         {`
 ├── controllers
 │   ├── __init__.py
-│   ├── buckets.py
-│   └── contracts.py
+│   ├── blog.py
+│   └── users.py
 ├── models
 │   ├── __init__.py
-│   ├── buckets.py
-│   └── contracts.py
+│   ├── blog.py
+│   └── users.py
 └── views
     ├── __init__.py
-    ├── buckets.py
-    └── contracts.py
+    ├── blog.py
+    └── users.py
 `.trim()}
       </code>
     </pre>
@@ -46,12 +46,12 @@ export default () => (
     <pre>
       <code className="bash">
         {`
-├── buckets
+├── blog
 │   ├── __init__.py
 │   ├── controllers.py
 │   ├── models.py
 │   └── views.py
-└── contracts
+└── users
     ├── __init__.py
     ├── controllers.py
     ├── models.py
@@ -60,8 +60,8 @@ export default () => (
       </code>
     </pre>
     <p>
-      This way, when you're dealing with <code>Buckets</code>, it's a highly
-      cohesive module and loosely coupled from <code>Contracts</code>.
+      This way, when you're dealing with <code>Blogs</code>, it's a highly
+      cohesive module and loosely coupled from <code>Users</code>.
     </p>
   </React.Fragment>
 )

@@ -28,5 +28,12 @@ export default () => (
       </a>
       ].
     </p>
+    <h4>File Size</h4>
+    <p>
+      You code should be grouped by logical structure. As soon as a does more
+      than one reasonable thing, it should be broken out into a folder and the
+      functions exported through the <code>index.js</code> /{' '}
+      <code>__import__</code> file.
+    </p>
   </React.Fragment>
 )

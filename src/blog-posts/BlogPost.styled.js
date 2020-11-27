@@ -2,6 +2,28 @@ import styled from 'styled-components'
 
 export const StyledBlogPost = styled.div`
   max-width: 900px;
+  header {
+    margin-bottom: 25px;
+  }
+
+  h2 {
+    font-weight: 300;
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    color: #777;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 50px 0 25px;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    color: #777;
+    margin: 50px 0 25px;
+  }
 
   blockquote {
     border-left: 4px solid #666;
@@ -31,9 +53,7 @@ export const StyledBlogPost = styled.div`
   p code {
     font-size: 0.95rem;
   }
-  footer {
-    display: flex;
-    justify-content: space-between;
+  .post-meta {
     font-size: 1rem;
     color: #777;
     font-style: italic;
