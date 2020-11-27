@@ -9,6 +9,7 @@ export const allPosts = [
     dateCreated: 'Nov 23, 2020',
     tags: ['being-full-stack'],
     body: require('./being-full-stack/being-full-stack').default,
+    published: true,
   },
   {
     title: 'My Frontend Stack',
@@ -20,6 +21,7 @@ export const allPosts = [
     dateCreated: 'Nov 23, 2020',
     tags: ['being-full-stack', 'frontend'],
     body: require('./being-full-stack/the-frontend-stack').default,
+    published: true,
   },
   // {
   //   title: 'The Functional Programming Mindset',
