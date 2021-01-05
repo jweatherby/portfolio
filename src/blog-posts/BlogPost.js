@@ -18,7 +18,6 @@ export const BlogPost = ({
   },
 }) => {
   const blogRef = useRef(null)
-  const [loading, setLoading] = useState(true)
 
   const Post = allPosts.find(p => p.slug === slug)
 
@@ -28,8 +27,7 @@ export const BlogPost = ({
         hljs.highlightBlock(block)
       })
     }
-    setLoading(false)
-  }, [slug])
+  }, [blogRef])
 
   if (!Post) {
     return <div>Not found</div>
@@ -42,30 +40,25 @@ export const BlogPost = ({
         description={Post.blurb}
         url={`/blog/${Post.slug}`}
       />
-      {loading && <div>Loading ... </div>}
-      {!loading && (
-        <>
-          <header>
-            <h2>{Post.title}</h2>
-            <div className="post-meta">
-              <div>
-                <strong>Jamie Weatherby</strong>
-              </div>
-              <div>{Post.dateCreated}</div>
-            </div>
-          </header>
-          <Post.body />
-          <footer className="post-meta">
-            Tags:{' '}
-            {Post.tags.map((tag, key) => (
-              <React.Fragment key={tag}>
-                <strong>{tag}</strong>
-                {key < Post.tags.length - 1 && ', '}
-              </React.Fragment>
-            ))}
-          </footer>
-        </>
-      )}
+      <header>
+        <h2>{Post.title}</h2>
+        <div className="post-meta">
+          <div>
+            <strong>Jamie Weatherby</strong>
+          </div>
+          <div>{Post.dateCreated}</div>
+        </div>
+      </header>
+      <Post.body />
+      <footer className="post-meta">
+        Tags:{' '}
+        {Post.tags.map((tag, key) => (
+          <React.Fragment key={tag}>
+            <strong>{tag}</strong>
+            {key < Post.tags.length - 1 && ', '}
+          </React.Fragment>
+        ))}
+      </footer>
     </StyledBlogPost>
   )
 }
