@@ -114,14 +114,4 @@ export const allPosts = [
   //   body: require('./principled-dev/submitting-requests').default,
   //   published: false,
   // },
-  {
-    title: 'Offers V2',
-    slug: 'offers-v2',
-    blurb: `Offers V2: a quick overview of how I would design it.`,
-    imageSrc: '/images/blog-posts/sitemap.jpg',
-    dateCreated: 'Nov 25, 2020',
-    tags: ['offers-v2'],
-    body: require('./offers-v2/offers-v2').default,
-    published: false,
-  },
 ]
