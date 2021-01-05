@@ -34,10 +34,6 @@ export const BlogPost = ({
     setLoading(false)
   }, [Post])
 
-  if (loading) {
-    return <div>Loading ... </div>
-  }
-
   if (!Post) {
     return <div>Not found</div>
   }
@@ -49,25 +45,30 @@ export const BlogPost = ({
         description={Post.blurb}
         url={`/blog/${Post.slug}`}
       />
-      <header>
-        <h2>{Post.title}</h2>
-        <div className="post-meta">
-          <div>
-            <strong>Jamie Weatherby</strong>
-          </div>
-          <div>{Post.dateCreated}</div>
-        </div>
-      </header>
-      <Post.body />
-      <footer className="post-meta">
-        Tags:{' '}
-        {Post.tags.map((tag, key) => (
-          <React.Fragment key={tag}>
-            <strong>{tag}</strong>
-            {key < Post.tags.length - 1 && ', '}
-          </React.Fragment>
-        ))}
-      </footer>
+      {loading && <div>Loading ... </div>}
+      {!loading && (
+        <>
+          <header>
+            <h2>{Post.title}</h2>
+            <div className="post-meta">
+              <div>
+                <strong>Jamie Weatherby</strong>
+              </div>
+              <div>{Post.dateCreated}</div>
+            </div>
+          </header>
+          <Post.body />
+          <footer className="post-meta">
+            Tags:{' '}
+            {Post.tags.map((tag, key) => (
+              <React.Fragment key={tag}>
+                <strong>{tag}</strong>
+                {key < Post.tags.length - 1 && ', '}
+              </React.Fragment>
+            ))}
+          </footer>
+        </>
+      )}
     </StyledBlogPost>
   )
 }

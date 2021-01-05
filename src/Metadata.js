@@ -12,24 +12,20 @@ const defaultMetadata = {
 }
 
 export const Metadata = ({ url, title, ...metadata }) => {
-  console.log('defaultMetadata', defaultMetadata.url)
   const _metadata = {
     ...defaultMetadata,
     ...metadata,
-    ...{
-      url: url
-        ? `${defaultMetadata.url.replace(/\/$/, '')}${url}`
-        : defaultMetadata,
-      title: title
-        ? `${title} | ${defaultMetadata.title}`
-        : defaultMetadata.title,
-    },
+    url: url
+      ? `${defaultMetadata.url.replace(/\/$/, '')}${url}`
+      : defaultMetadata,
+    title: title
+      ? `${title} | ${defaultMetadata.title}`
+      : defaultMetadata.title,
   }
 
   return (
     <Helmet>
       <title>{_metadata.title}</title>
-      <description>{_metadata.description}</description>
       <link rel="canonical" href={_metadata.url} />
       <meta property="og:site_name" content={defaultMetadata.title} />
       <meta property="og:title" content={_metadata.title} />

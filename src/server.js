@@ -3,6 +3,7 @@ import React from 'react'
 import { StaticRouter } from 'react-router-dom'
 import express from 'express'
 import { renderToString } from 'react-dom/server'
+import { Helmet } from 'react-helmet'
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST)
 
@@ -17,7 +18,7 @@ server
         <App />
       </StaticRouter>
     )
-
+    const helmet = Helmet.renderStatic()
     if (context.url) {
       res.redirect(context.url)
     } else {
@@ -39,6 +40,9 @@ server
             ? `<script src="${assets.client.js}" defer></script>`
             : `<script src="${assets.client.js}" defer crossorigin></script>`
         }
+        ${helmet.title.toString()}
+        ${helmet.meta.toString()}
+        ${helmet.link.toString()}
         <style>
           #root {
             opacity: 0;
