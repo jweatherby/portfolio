@@ -28,7 +28,7 @@ export const allPosts = [
     slug: 'folder-structure',
     blurb: `Two core fundamentals to follow to better structure your code.`,
     imageSrc: '/images/blog-posts/sitemap.jpg',
-    dateCreated: 'Jan 4, 2020',
+    dateCreated: 'Jan 4, 2021',
     tags: ['being-full-stack'],
     body: require('./being-full-stack/folder-structure').default,
     published: true,
@@ -41,7 +41,7 @@ export const allPosts = [
        contracts across the different endpoints.
     `,
     imageSrc: '/images/blog-posts/sitemap.jpg',
-    dateCreated: 'Jan 18, 2020',
+    dateCreated: 'Jan 18, 2021',
     tags: ['being-full-stack', 'backend'],
     body: require('./being-full-stack/api-error-handling').default,
     published: false,
