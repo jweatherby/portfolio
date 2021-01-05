@@ -58,6 +58,28 @@ user = get_user()
 `.trim()}
       </code>
     </pre>
+    <p>
+      If you're already in the situation where you have the former
+      tightly-coupled, traditional MVC file structure, there are a couple
+      approaches you can take, but they need to be determined from the
+      beginning.
+    </p>
+    <p>The first is to include the function name on every function and import them all individually.</p>
+    <pre>
+      <code className="python">{`
+from models.user import get_user  # can get unwieldly
+
+user = get_user()  # no stuttering
+`}</code>
+    </pre>
+    <p>Alternatively, you can minimize the function names to only indicate </p>
+    <pre>
+      <code className="python">{`
+from models import user
+
+user = user.get()  # no suttering but bad function name
+`}</code>
+    </pre>
     <h4>Error Handling</h4>
     <p>
       Designing your error handling well means the frontend can more easily
@@ -98,7 +120,7 @@ user = get_user()
     <pre>
       <code>
         {`
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -147,7 +169,7 @@ def handle_hello_world(world):
         return {'errors': _format_error('World not found', field='world')}
 
     if world == 'hell':
-        raise ValueError('The world is not hell')
+        raise ValueError('The world cannot be hell')
 
     return jsonify({'hello': world})
 

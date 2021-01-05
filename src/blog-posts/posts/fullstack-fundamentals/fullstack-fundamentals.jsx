@@ -4,8 +4,8 @@ import ApiDesign from './2-api-design'
 import ApiClient from './3-api-client'
 import LoadingComponents from './4-loading-components'
 import SubmittingRequests from './5-submitting-requests'
-import TestStrategy from './7-test-strategy'
-import AntiPatterns from './6-anti-patterns'
+import TestStrategy from './6-test-strategy'
+import AntiPatterns from './7-anti-patterns'
 
 export default () => (
   <article>

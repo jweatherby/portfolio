@@ -8,6 +8,9 @@ export default () => (
       various libraries out there that handle this, but I've always used my own.
       In JavaScript, the <code>fetch</code> library is widely supported by all
       major browsers and can be easily abstracted away to fit our needs.
+      Wrapping it in a client like this ensures that all the requests are
+      handled at the source. This api function will format the error and always
+      return a predictable response.
     </p>
     <pre>
       <code>
@@ -31,16 +34,21 @@ const handleRequest = async (method, url, { body, headers = {} }) => {
   let resp
   const catchAllError = 'Internal error, try again.'
   try {
-    resp = await fetch(baseUrl + url, reqArgs)
+    resp = await fetch(baseUrl + url, reqArgs)  // handle the api request
   } catch (error) {
+    // something went wrong with the request that
+    // even the api could not handler
     return { errors: [{ message: catchAllError }] }
   }
 
   const respData = await resp.json()
+
+  // the json could not be decoded
   if (respData.errors) {
     return { errors: [{ message: catchAllError }] }
   }
-  return respData
+
+  return respData  // return all errors and data from the api response
 }`.trim()}
       </code>
     </pre>

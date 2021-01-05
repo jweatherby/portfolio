@@ -44,11 +44,22 @@ export const BlogPost = ({
     <StyledBlogPost ref={blogRef} key={Post.slug}>
       <header>
         <h2>{Post.title}</h2>
+        <div className="post-meta">
+          <div>
+            <strong>Jamie Weatherby</strong>
+          </div>
+          <div>{Post.dateCreated}</div>
+        </div>
       </header>
       <Post.body />
-      <footer>
-        <div>{Post.tags.join(', ')}</div>
-        <div>{Post.dateCreated}</div>
+      <footer className="post-meta">
+        Tags:{' '}
+        {Post.tags.map((tag, key) => (
+          <React.Fragment key={tag}>
+            <strong>{tag}</strong>
+            {key < Post.tags.length - 1 && ', '}
+          </React.Fragment>
+        ))}
       </footer>
     </StyledBlogPost>
   )
