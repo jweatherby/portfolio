@@ -18,6 +18,7 @@ export const BlogPost = ({
 }) => {
   const blogRef = useRef(null)
   const [Post, setPost] = useState()
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     setPost(allPosts.find(p => p.slug === slug))
@@ -29,7 +30,12 @@ export const BlogPost = ({
         hljs.highlightBlock(block)
       })
     }
+    setLoading(false)
   }, [Post])
+
+  if (loading) {
+    return <div>Loading ... </div>
+  }
 
   if (!Post) {
     return <div>Not found</div>

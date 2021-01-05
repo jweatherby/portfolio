@@ -31,6 +31,10 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 0 20px 0;
     padding: 0px;
   }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 
   #root {
     opacity: 1;

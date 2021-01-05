@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default () => (
   <article>
@@ -261,5 +262,8 @@ const StyledBlog = styled.div\`
       no form handling. In other words, nothing to handle the business logic of
       the app. Just the fundamentals to get started on a rock solid codebase.
     </p>
+    <aside>
+      Next: <Link to="/blog/folder-structure">Folder Structure</Link>
+    </aside>
   </article>
 )

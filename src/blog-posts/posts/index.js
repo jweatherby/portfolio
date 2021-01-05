@@ -23,6 +23,29 @@ export const allPosts = [
     body: require('./being-full-stack/the-frontend-stack').default,
     published: true,
   },
+  {
+    title: 'Folder structure',
+    slug: 'folder-structure',
+    blurb: `Two core fundamentals to follow to better structure your code.`,
+    imageSrc: '/images/blog-posts/sitemap.jpg',
+    dateCreated: 'Nov 20, 2020',
+    tags: ['being-full-stack'],
+    body: require('./being-full-stack/folder-structure').default,
+    published: true,
+  },
+  {
+    title: 'API Error Handling',
+    slug: 'api-error-handling',
+    blurb: `
+       Here, I'll walk through a conventional API design for consistent
+       contracts across the different endpoints.
+    `,
+    imageSrc: '/images/blog-posts/sitemap.jpg',
+    dateCreated: 'Nov 20, 2020',
+    tags: ['being-full-stack', 'backend'],
+    body: require('./being-full-stack/api-error-handling').default,
+    published: false,
+  },
   // {
   //   title: 'The Functional Programming Mindset',
   //   slug: 'functional-programming',
@@ -34,16 +57,6 @@ export const allPosts = [
   //   dateCreated: 'Nov 20, 2020',
   //   tags: ['principled-dev', 'functional programming'],
   //   body: require('./principled-dev/functional-programming').default,
-  //   published: false,
-  // },
-  // {
-  //   title: 'Folder structure',
-  //   slug: 'folder-structure',
-  //   blurb: `How to structure your code so future you is happy you.`,
-  //   imageSrc: '/images/blog-posts/sitemap.jpg',
-  //   dateCreated: 'Nov 20, 2020',
-  //   tags: ['static site', 'frontend'],
-  //   body: require('./principled-dev/folder-structure').default,
   //   published: false,
   // },
   // {
