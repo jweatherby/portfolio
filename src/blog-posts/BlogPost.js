@@ -18,12 +18,9 @@ export const BlogPost = ({
   },
 }) => {
   const blogRef = useRef(null)
-  const [Post, setPost] = useState()
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    setPost(allPosts.find(p => p.slug === slug))
-  }, [slug])
+  const Post = allPosts.find(p => p.slug === slug)
 
   useEffect(() => {
     if (blogRef.current) {
@@ -32,7 +29,7 @@ export const BlogPost = ({
       })
     }
     setLoading(false)
-  }, [Post])
+  }, [slug])
 
   if (!Post) {
     return <div>Not found</div>
