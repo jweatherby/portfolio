@@ -17,7 +17,7 @@ export const Metadata = ({ url, title, ...metadata }) => {
     ...metadata,
     url: url
       ? `${defaultMetadata.url.replace(/\/$/, '')}${url}`
-      : defaultMetadata,
+      : defaultMetadata.url,
     title: title
       ? `${title} | ${defaultMetadata.title}`
       : defaultMetadata.title,
