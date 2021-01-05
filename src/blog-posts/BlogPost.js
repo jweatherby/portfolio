@@ -5,6 +5,7 @@ import { allPosts } from './posts'
 import { StyledBlogPost } from './BlogPost.styled'
 
 import 'highlight.js/styles/monokai.css'
+import { Metadata } from '../Metadata'
 
 hljs.registerLanguage('python', require('highlight.js/lib/languages/python'))
 hljs.registerLanguage('js', require('highlight.js/lib/languages/javascript'))
@@ -40,8 +41,14 @@ export const BlogPost = ({
   if (!Post) {
     return <div>Not found</div>
   }
+
   return (
     <StyledBlogPost ref={blogRef} key={Post.slug}>
+      <Metadata
+        title={Post.title}
+        description={Post.blurb}
+        url={`/blog/${Post.slug}`}
+      />
       <header>
         <h2>{Post.title}</h2>
         <div className="post-meta">

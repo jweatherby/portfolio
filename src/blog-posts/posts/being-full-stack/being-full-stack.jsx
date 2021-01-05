@@ -24,7 +24,7 @@ export default () => (
     </p>
     <aside>
       The languages I use in my day to day are Python and JavaScript, so my code
-      examples will be the shown in those languages.
+      examples will be primarily in those languages.
     </aside>
     <aside>
       Next: <Link to="/blog/the-frontend-stack">The Frontend Stack</Link>

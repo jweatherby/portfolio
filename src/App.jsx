@@ -1,17 +1,18 @@
 import React from 'react'
-import { Switch, BrowserRouter, Route, Link } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
 
 import { AboutMe, ProjectsAndWork } from './static-pages'
 import { BlogPost, PostList } from './blog-posts'
 
 import { GlobalStyle } from './Globals.styled'
-
+import { Metadata } from './Metadata'
 import { StyledNav, StyledMain } from './App.styled'
 
 export const App = () => (
   <React.Fragment>
     <GlobalStyle />
     <StyledMain>
+      <Metadata />
       <Switch>
         <Route path="/" component={AboutMe} exact />
         <Route path="/blog" component={PostList} exact />

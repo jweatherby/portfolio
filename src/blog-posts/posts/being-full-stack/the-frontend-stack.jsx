@@ -36,7 +36,6 @@ export default () => (
         </a>
       </li>
     </ul>
-
     {/* ReactJS */}
     <h3>ReactJS</h3>
     <p>
@@ -52,17 +51,26 @@ export default () => (
     <p>
       Coming from JQuery land, the concept of a virtual DOM to manage the HTML
       within the JavaScript functionality sounded amazing. The advantages
-      include a more readable codebase through JSX and{' '}
-      <a href="https://stackoverflow.com/a/34520204/1531156" target="_blank">
-        one-way-binding
-      </a>
-      ; quick and declarative rendering; more testable individual components;
-      easy Server Side Rendering; and React is a mature project with a huge
-      community.
+      include:
+    </p>
+    <ul>
+      <li>
+        a more readable codebase through JSX and{' '}
+        <a href="https://stackoverflow.com/a/34520204/1531156" target="_blank">
+          one-way-binding
+        </a>
+      </li>
+      <li>quick and declarative rendering</li>
+      <li>more testable individual components</li>
+      <li>easy Server Side Rendering</li>
+      <li>a rich and vast package ecosystem</li>
+    </ul>
+    <p>
+      But most importantly, React is a mature project with a huge community.
     </p>
     <p>
       There are some disadvantages as well: it's a lot to learn; testing can be
-      technically difficult; it's lack of opinions on file structure can yield
+      technically difficult; its lack of opinions on file structure can yield
       unweildly codebases; the ecosystem is almost too large; and because it is
       so easy to create complex applications, state management can become very
       complicated and messy.
@@ -70,10 +78,10 @@ export default () => (
     <p>
       I prefer ReactJS because I've dealt with a lot of the nuances, have a deep
       familiarity with the language and ecosystem, and have established
-      conventions when dealing with ReactJS applications. A word of warning,
+      conventions when dealing with ReactJS applications. A word of warning:
       starting a big project and trying to learn React at the same time is a
-      recipe for disaster. There are other languages and frameworks which are
-      more forgiving of these types of scenarios.
+      recipe for disaster. There are other, more forgiving, languages and
+      frameworks for these types of scenarios.
     </p>
     <p>
       To get up and running with your ReactJS application, I've had success with{' '}
@@ -103,8 +111,8 @@ export default () => (
     <h3>React Router</h3>
     <p>
       If you're building a frontend app, it probably needs different pages. And
-      those different pages need to load when different routes are hit. You're
-      going to need a routing library and I've been happy with{' '}
+      those different pages need to load when different endpoints are hit.
+      You're going to need a routing library and I've been happy with{' '}
       <a href="https://reactrouter.com/" target="_blank">
         React Router
       </a>{' '}
@@ -120,7 +128,6 @@ export default () => (
       complicated pages declarative since they only fetch the data they need at
       exactly the right time.
     </p>
-
     {/* Styled Components */}
     <h3>Styled Components</h3>
     <p>
@@ -184,7 +191,7 @@ const StyledBlog = styled.div\`
       </code>
     </pre>
     <p>
-      Another benefit to <em>styled-components</em> is implied / convention:
+      Another benefit to <em>styled-components</em> is implied / by convention:
       they live next to the components they're styling. Often, I've seen SASS /
       SCSS / LESS separate from the HTML they relate to, meaning you have a
       duplicate filestructure mirroring your JS code (if you were disciplined
@@ -194,7 +201,6 @@ const StyledBlog = styled.div\`
       <br />
       I'll speak more on this later, when we discuss folder structure.
     </p>
-
     {/* ESLint */}
     <h3>ESLint </h3>
     <p>
@@ -225,7 +231,6 @@ const StyledBlog = styled.div\`
 }`}
       </code>
     </pre>
-
     {/* JS Testing Library */}
     <h3>JS Testing Library</h3>
     <p>
