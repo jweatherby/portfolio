@@ -12,7 +12,6 @@ export const App = () => (
   <React.Fragment>
     <GlobalStyle />
     <StyledMain>
-      <Metadata />
       <Switch>
         <Route path="/" component={AboutMe} exact />
         <Route path="/blog" component={PostList} exact />

@@ -26,7 +26,7 @@ export const allPosts = [
   {
     title: 'Folder structure',
     slug: 'folder-structure',
-    blurb: `Two core fundamentals to follow to better structure your code.`,
+    blurb: `Core fundamentals to better structure your code.`,
     imageSrc: '/images/blog-posts/sitemap.jpg',
     dateCreated: 'Jan 4, 2021',
     tags: ['being-full-stack'],

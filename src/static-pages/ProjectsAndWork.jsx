@@ -1,4 +1,5 @@
 import React from 'react'
+import { Metadata } from 'Metadata'
 import { StyledProjectsAndWork } from './ProjectsAndWork.styled'
 
 const workItems = [
@@ -47,6 +48,7 @@ const workItems = [
 export const ProjectsAndWork = () => {
   return (
     <StyledProjectsAndWork>
+      <Metadata title="Projects & Work" />
       <h2>Projects & Work</h2>
       {workItems.map((work, key) => (
         <article key={key} className={`work-item ${work.slug}`}>

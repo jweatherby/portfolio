@@ -1,8 +1,10 @@
 import React from 'react'
 import { StyledAboutMe } from './AboutMe.styled'
+import { Metadata } from 'Metadata'
 
 export const AboutMe = () => (
   <StyledAboutMe>
+    <Metadata title="About Me" />
     <h2>About Me</h2>
     <div className="profile-img-wrapper">
       <div className="profile-img" />
