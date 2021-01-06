@@ -28,7 +28,7 @@ export const allPosts = [
     slug: 'folder-structure',
     blurb: `Some principles to consider when outlining the structure of your code.`,
     imageSrc: '/images/blog-posts/sitemap.jpg',
-    dateCreated: 'Jan 4, 2021',
+    dateCreated: 'Jan 6, 2021',
     tags: ['being-full-stack'],
     body: require('./being-full-stack/folder-structure').default,
     published: true,
