@@ -5,7 +5,7 @@ import { StyledPostList } from './PostList.styled'
 
 export const PostList = () => (
   <StyledPostList>
-    <h2>Writings</h2>
+    <h2>Blog Posts</h2>
     <div className="post-list">
       {allPosts
         .filter(p => p.published)

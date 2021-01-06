@@ -58,4 +58,13 @@ export const StyledBlogPost = styled.div`
     color: #777;
     font-style: italic;
   }
+  .post-tags {
+    font-size: 1rem;
+    color: #777;
+    font-style: italic;
+  }
+  .post-socials {
+    font-size: 1rem;
+    font-style: italic;
+  }
 `

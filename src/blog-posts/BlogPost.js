@@ -50,14 +50,24 @@ export const BlogPost = ({
         </div>
       </header>
       <Post.body />
-      <footer className="post-meta">
-        Tags:{' '}
-        {Post.tags.map((tag, key) => (
-          <React.Fragment key={tag}>
-            <strong>{tag}</strong>
-            {key < Post.tags.length - 1 && ', '}
-          </React.Fragment>
-        ))}
+      <footer>
+        <div className="post-tags">
+          <strong>Tags:</strong>{' '}
+          {Post.tags.map((tag, key) => (
+            <React.Fragment key={tag}>
+              {tag}
+              {key < Post.tags.length - 1 && ', '}
+            </React.Fragment>
+          ))}
+        </div>
+        <div className="post-socials">
+          <p>
+            Like what you're reading? Retweet, follow, or send me a message{' '}
+            <a href="https://twitter.com/_jweatherby" target="_blank">
+              on Twitter.
+            </a>
+          </p>
+        </div>
       </footer>
     </StyledBlogPost>
   )

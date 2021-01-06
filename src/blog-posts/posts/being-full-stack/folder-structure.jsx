@@ -12,6 +12,8 @@ export default () => (
       you'll spend the majority of your time reading code, not necessarily
       writing it. While it's important to write good, coherent, well documented
       code, an often overlooked aspect is a well thought out folder structure.
+      And the thing about folder structure: once it has been established, it's
+      difficult to change.
     </p>
     <p>
       When thinking about folder structure, there are two concepts I'll be
@@ -28,11 +30,11 @@ export default () => (
         target="_blank"
       >
         Cohesion
-      </a>
-      , refers to the degree to which the elements in a module or package belong
+      </a>{' '}
+      refers to the degree to which the elements in a module or package belong
       together.
     </p>
-    <p>A good rule of thumb, widely accepted in programming, is that:</p>
+    <p>This is a good rule of thumb, and widely accepted in software:</p>
     <blockquote>
       <strong>Good software design has high cohesion and low coupling.</strong>{' '}
       [
@@ -111,13 +113,14 @@ export default () => (
       <a href="https://djangobook.com/mdj2-django-structure/" target="_blank">
         increases cohesion and decreases coupling
       </a>
-      . In this instance, the code is much more cohesive and if you need to add
-      the <code>birthday</code> field to the user model, all the work is
-      isolated to the same package. This also decreases the cognitive distance
-      when tracing a request's lifecycle and saves you having to step through
-      the 3 different packages (<code>controllers/users</code>,{' '}
+      . In this instance, the code is much more cohesive. If you need to add the{' '}
+      <code>birthday</code> field to the user model, all the work is isolated to
+      the same package. This also decreases the cognitive distance when tracing
+      a request's lifecycle and saves you not having to step through the 3
+      different packages (<code>controllers/users</code>,{' '}
       <code>models/users</code>, <code>views/users</code>). When you know the
-      endpoint, you know exactly which package you're working with.
+      endpoint, you go into the <code>users</code> package and everything is
+      there.
     </p>
     <p>
       In addition to increasing the cohesion in a single package,{' '}
@@ -131,18 +134,23 @@ export default () => (
       often leads to highly coupled code that is less well thought out.
     </p>
     <p>
-      In the end, you want to structure your code so it follows these rules:{' '}
+      In the end, you want to structure your code according to these
+      visualizations:{' '}
     </p>
     <p>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Good%2C_bad_apps.png/691px-Good%2C_bad_apps.png" />
     </p>
     <h3>Import Strategy</h3>
+    <aside>
+      In the following examples, I'll be using purely functionional programming
+      to provide examples at the module and package levels.
+    </aside>
     <p>
       Import strategy goes hand in hand with folder structure. An important
       consideration here is readability and to prevent <em>stuttering</em>.
       Stuttering is when you repeat the same term multiple times when calling an
-      action from another module or file. For example, if written with{' '}
-      function-driven folders:
+      action from another module or file. For example, if written with the{' '}
+      <em>Function Driven</em> folder structure from above:
     </p>
     <pre>
       <code className="python">
@@ -158,8 +166,29 @@ user = user.get_user()  # stuttering
     <p>
       In this example, the term <code>user</code> is stuttered. It may seem
       trivial now, but it can become tedious and distracting if it happens often
-      enough. Alternatively, you can import all the functions in one at a time,
-      but this can grow unwieldly if a lot of code needs to be imported.
+      enough. To offset this, you can remove the stuttering from the function
+      names, like so:
+    </p>
+    <pre>
+      <code className="python">
+        {`
+# controllers/users.py
+
+from models import user
+
+user = user.get()  # no stuttering, bad function name.
+`.trim()}
+      </code>
+    </pre>
+    <p>
+      In this case, you needed to create a bad function name to compensate for
+      the stuttering. A function should not be named <code>get</code>,
+      especially just to compensate for the stuttering incurred. At this point,
+      it is better to have the stuttering than function names like this.
+    </p>
+    <p>
+      Alternatively, you can import all the functions in one at a time, but this
+      can grow unwieldly if a lot of code needs to be imported.
     </p>
 
     <pre>
@@ -202,8 +231,8 @@ user = get_user()  # still no stuttering
     <p>
       Within the <em>Domain Driven</em> package, this is possible because all
       the models relate to <code>users</code> so you can namespace it as such.
-      When another module is accessing it, they'll likely need fewer imports, so
-      they can be written out individually.
+      When another package is accessing it, they'll likely need access to fewer
+      bits of functionality, so they can be imported individually.
     </p>
     <pre>
       <code className="python">
@@ -216,6 +245,11 @@ user = get_user()
 `.trim()}
       </code>
     </pre>
+    <p>
+      While these examples are written in python, they apply across the board,
+      especially in JavaScript, where folders are broken out in the widely
+      taught "Function Driven" style.
+    </p>
     <p>
       By keeping these principles in mind when writing and architecting code,
       those reading your code in future will have an easy time grasping the

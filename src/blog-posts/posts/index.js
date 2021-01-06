@@ -24,9 +24,9 @@ export const allPosts = [
     published: true,
   },
   {
-    title: 'Folder structure',
+    title: 'Best Practices When Structuring Your Code',
     slug: 'folder-structure',
-    blurb: `Core fundamentals to better structure your code.`,
+    blurb: `Some principles to consider when outlining the structure of your code.`,
     imageSrc: '/images/blog-posts/sitemap.jpg',
     dateCreated: 'Jan 4, 2021',
     tags: ['being-full-stack'],
