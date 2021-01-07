@@ -27,7 +27,7 @@ export const BlogPost = ({
         hljs.highlightBlock(block)
       })
     }
-  }, [blogRef])
+  }, [blogRef, slug])
 
   if (!Post) {
     return <div>Not found</div>

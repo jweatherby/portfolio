@@ -24,13 +24,13 @@ export const allPosts = [
     published: true,
   },
   {
-    title: 'Best Practices When Structuring Your Code',
-    slug: 'folder-structure',
+    title: 'A Different Way to Structure Your Code',
+    slug: 'structuring-your-code',
     blurb: `Some principles to consider when outlining the structure of your code.`,
     imageSrc: '/images/blog-posts/sitemap.jpg',
     dateCreated: 'Jan 6, 2021',
     tags: ['being-full-stack'],
-    body: require('./being-full-stack/folder-structure').default,
+    body: require('./being-full-stack/structuring-your-code').default,
     published: true,
   },
   {

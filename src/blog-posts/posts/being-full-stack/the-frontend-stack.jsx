@@ -268,7 +268,7 @@ const StyledBlog = styled.div\`
       the app. Just the fundamentals to get started on a rock solid codebase.
     </p>
     <aside>
-      Next: <Link to="/blog/folder-structure">Folder Structure</Link>
+      Next: <Link to="/blog/structuring-your-code">Structuring Your Code</Link>
     </aside>
   </article>
 )
