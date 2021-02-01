@@ -23,9 +23,9 @@ export const BlogPost = ({
 
   useEffect(() => {
     if (blogRef.current) {
-      blogRef.current.querySelectorAll('pre code').forEach(block => {
-        hljs.highlightBlock(block)
-      })
+      blogRef.current
+        .querySelectorAll('pre code')
+        .forEach(block => hljs.highlightBlock(block))
     }
   }, [blogRef, slug])
 

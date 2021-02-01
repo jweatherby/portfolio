@@ -24,7 +24,7 @@ export const allPosts = [
     published: true,
   },
   {
-    title: 'A Different Way to Structure Your Code',
+    title: 'Structuring your code with cohesion and coupling',
     slug: 'structuring-your-code',
     blurb: `Some principles to consider when outlining the structure of your code.`,
     imageSrc: '/images/blog-posts/sitemap.jpg',
